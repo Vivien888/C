@@ -1,0 +1,8 @@
+答：
+题中所述代码是非法的，null 是一个 int 变量，p 是一个 int 指针，二者不能直接绑定。
+
+仅仅从语法角度来说，可以将代码修改为：
+int null = 0, *p = &null;
+
+另一种改法是使用 nullptr ：
+int null = 0, *p = nullptr;
