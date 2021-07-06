@@ -1,0 +1,5 @@
+答：
+(a)有，字符 'a' 转换为 int ，然后与 3 相加的结果再转换为 char 并赋给 cval。
+(b)有，ival 转换为 double，与1.0相乘的结果也是 double 类型，ui 转换为 double 后与乘法得到的结果相减，最终的结果转换为 float 并赋给 fval。
+(c)有，ui 转换为 float，与 fval 相乘的结果转换为 double 类型并赋给 dval。
+(d)有，ival 转换为 float，与 fval 相加后的结果转换为 double 类型，再与 dval 相加后结果转换为 char 类型。

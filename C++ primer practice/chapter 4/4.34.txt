@@ -1,0 +1,4 @@
+答：
+(a)if 语句的条件应该是布尔值，因此 float 型变量 fval 自动转换为 bool 类型，转换规则是所有非0值转换为 true，0转换为 false。
+(b)ival 转换为 float，与 fval 相加的结果进一步转换为 double 类型。
+(c)cval 执行整型提升转换为 int，与 ival 相乘后所得的结果转换为 double 类型，最后再与 dval 相加。

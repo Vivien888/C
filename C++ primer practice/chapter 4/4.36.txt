@@ -1,0 +1,2 @@
+答：
+i *= static_cast<int>(d);
