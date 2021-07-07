@@ -1,0 +1,7 @@
+答：
+该程序是非法的，因为 ivec 目前没有任何元素，因此 ivec[0] 的形式是错误的，程序试图访问的元素根本不存在。
+想要向 vector 对象中添加新元素，需要使用 push_back 函数。
+
+修改后的代码如下：
+vector<int> ivec;
+ivec.push_back(42);

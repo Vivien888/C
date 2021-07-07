@@ -1,0 +1,10 @@
+答：
+题中的程序是想要创建一个包含10个整数的数组，并把数组的每个元素初始化为元素的下标值。
+但是for 循环终止条件处有错，数组的下标应该大于等于0而小于数组的大小，在本题中下标的范围应该是0~9。
+
+因此程序应该修改为：
+
+constexpr size_t array_size = 10;
+int ia[array_size];
+for (size_t ix = 0; ix < array_size; ++ix)
+	ia[ix] = ix;
