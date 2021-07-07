@@ -1,0 +1,18 @@
+答：
+（1）用 for 循环语句改写：
+int sz;
+for (sz = get_size(); sz <= 0; sz = get_size())
+  ;
+
+（2）用 do-while 语句改写：
+int sz;
+do {
+  sz = get_size();
+} while (sz <= 0);
+
+（3）用 while 语句改写：
+int sz;
+while (sz <= 0)
+{
+  sz = get_size();
+} 
