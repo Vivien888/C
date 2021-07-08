@@ -1,0 +1,2 @@
+答：
+initializer_list<string> 的所有元素类型都是 string，因此 const auto &elem : il 推断得到的 elem 的类型是 const strings。

@@ -1,0 +1,4 @@
+答：
+不能把isShorter函数定义成constexpr函数，原因如下：
+constexpr 函数是指能用于常量表达式的函数，constexpr 函数的返回类型和所有形参的类型都得是字面值类型，而且函数体中必须有且只有一条 return 语句。
+而isShorter 函数虽然只有一条 return 语句，但是返回的结果调用了标准库 string 类的 size() 函数和 < 比较符，无法构成常量表达式，因此不能改写成 constexpr 函数。

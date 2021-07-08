@@ -1,0 +1,14 @@
+答：
+前面的练习中的函数，大多规模较小且流程直接，适合于设置为内联函数。
+举两个例子：
+（1）练习6.11中的 reset 函数改写后的形式是：
+inline void reset(int &i)
+{
+	i=0;
+}
+
+（2）练习6.21中的 myCompare 函数改写后的形式是：
+inline int mycompare(const int val, const int *p)
+{
+	return (val > *p) ? val : *p;
+}

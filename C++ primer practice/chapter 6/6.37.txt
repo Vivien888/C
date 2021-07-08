@@ -1,0 +1,13 @@
+答：
+（1）使用类型别名：
+typedef string arr[10];
+arr& func();
+
+（2）使用尾置返回类型：
+auto func()->string(&) [10];
+
+（3）使用 decltype 关键字：
+string str[10];
+decltype(str)& func();
+
+我觉得尾置返回类型最好，就一行代码，非常简便，同时这种形式对于返回类型比较复杂的函数最有效。

@@ -1,0 +1,26 @@
+答：
+void f();
+void f(int);
+void f(int, int);
+void f(double, double = 3.14);
+
+(a)f(2.56, 42) 的可行函数是 void f(int, int) 和 void f(double, double=3.14)。
+    但是最佳匹配不存在，因为这两个可行函数各有所长。
+    对于这次调用来说，如果只考虑第一个实参 2.56，则void f(double, double=3.14) 能够精确匹配，
+    但是要想匹配第二个参数，int 类型的实参 42 必须转换成 double 类型。
+    如果考虑第二个实参 42，则void f(int, int) 能够精确匹配，
+    但是要想调用 void f(int, int) 就必须把第一个 double 类型的实参 2.56 转换成 int 类型。
+    最终的结果是这两个可行函数各自在一个实参上实现了更好的匹配，但是把它们比较起来无从判断孰优孰劣，
+    调用不合法，因为调用具有二义性，如上所述。
+
+(b)f(42) 的可行函数是 void f(int) 和 void f(double, double=3.14)，
+    其中最佳匹配是 void f(int)，因为参数无须做任何类型转换。
+    调用合法。
+
+(c)f(42, 0) 的可行函数是 void f(int, int) 和 void f(double, double=3.14)，
+    其中最佳匹配是 void f(int, int)，因为参数无须做任何类型转换。
+    调用合法。
+
+(d)f(2.56, 3.14) 的可行函数是 void f(int, int) 和 void f(double, double=3.14)，
+    其中最佳匹配是 void f(double, double=3.14)，因为参数无须做任何类型转换。
+    调用合法。
