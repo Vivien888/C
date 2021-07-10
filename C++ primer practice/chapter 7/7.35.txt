@@ -1,0 +1,32 @@
+答：
+（1）
+typedef string Type;		//声明类型别名Type表示string
+Type initVal(); 			//声明函数initVal，返回类型是Type
+class Exercise {			//定义一个新类Exercise
+public:
+    typedef double Type;	//在内层作用域重新声明类型别名Type表示double
+    Type setVal(Type);		//声明函数setVal，参数和返回值的类型都是Type
+    Type initVal(); 		//在内层作用域重新声明函数initVal，返回类型是Type
+private:
+    int val;				//声明私有数据成员val
+};
+//定义函数setVal，此时的Type显然是外层作用域的
+Type Exercise::setVal(Type parm) { 
+    val = parm + initVal();  //此处使用的是类内的initVal函数
+    return val;
+}
+
+其中，
+在 Exercise 类的内部，函数 setval 和 initval 用到的 Type 都是 Exercise 内部声明的类型别名，对应的实际类型是 double。
+在 Exercise 类的外部，定义 Exercise::setVal 函数时形参类型 Type 用的是 Exercise 内部定义的别名，对应 double；
+返回类型 Type 用的是全局作用域的别名，对应 string。使用的 initVal 函数是 Exercise 类内定义的版本。
+
+（2）错误：
+编译上述程序时在 setVal 的定义处发生错误，此处定义的函数形参类型是 double、返回值类型是 string，
+而类内声明的同名函数形参类型是 double、返回值类型也是 double，二者无法匹配。
+修改措施：
+在定义 setVal 函数时使用作用域运算符强制指定函数的返回值类型。
+Exercise::Type Exercise::setVal(Type parm){
+	val=parm+initVal();		//此处使用的是类内的initVal函数
+	return val;
+}

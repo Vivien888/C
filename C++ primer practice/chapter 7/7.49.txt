@@ -1,0 +1,10 @@
+答：
+（a）正确，编译器首先用给定的 string 对象 s 自动创建一个 Sales_data 对象，
+         然后这个新生成的临时对象传给 combine 的形参（类型是 Sales_data），函数正确执行并返回结果。
+
+（b）无法编译通过，因为 combine 函数的参数是一个非常量引用，而 s 是一个 string 对象，
+         编译器用 s 自动创建一个 Sales_data 临时对象，但是这个新生成的临时对象无法传递给 combine 所需的非常量引用。
+         应该修改为 Sales_data &combine(const Sales_data&); 
+
+（c）无法编译通过，因为把 combine 声明成了常量成员函数，所以该函数无法修改数据成员的值。
+、

@@ -1,0 +1,7 @@
+答：
+错误：初始化 rem 要用到 base 的值，而此时 base 尚未被初始化，因此会出现错误。
+修改方法：把变量 rem 和 base 的次序调换即可
+struct X {
+	X (int i, int j): base(i), rem(base % j) {}
+	int base, rem;
+};

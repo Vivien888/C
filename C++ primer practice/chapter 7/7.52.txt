@@ -1,0 +1,9 @@
+答：
+（1）程序的意图是对 item 执行聚合类初始化操作，用花括号内的值初始化 item 的数据成员。
+（2）问题：聚合类必须满足没有类内初始值，而在2.6.1节给出的定义中，数据成员 units_sold 和 revenue 都包含类内初始值。
+（3）修改方法：去掉这两个类内初始值
+struct Sales_data {
+    string bookNo;
+    unsigned units_sold;
+    double revenue;
+};

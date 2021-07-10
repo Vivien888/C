@@ -1,0 +1,11 @@
+class Sales_data {
+friend Sales_data add(const Sales_data &lhs, const Sales_data &rhs);
+friend std::istream &read(std::istream &is, Sales_data &item);
+friend std::ostream &print(std::ostream &os, const Sales_data &item);
+private:
+	std::string bookNo;			//书籍编号，隐式初始化为空串
+	unsigned units_sold = 0;	//销售量，显式初始化为0
+	double sellingprice = 0.0;	//原始价格，显式初始化为0.0
+	double saleprice = 0.0;		//实售价格，显式初始化为0.0
+	double discount = 0.0;		//折扣，显式初始化为0.0
+};

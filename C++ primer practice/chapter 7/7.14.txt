@@ -1,0 +1,4 @@
+答：
+使用初始值列表的构造函数是：
+Sales_data(const std::string &book)
+	:bookNo(book), units_sold(0), sellingprice(0), saleprice(0), discount(0) { }
